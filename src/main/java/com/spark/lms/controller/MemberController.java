@@ -63,7 +63,7 @@ public class MemberController {
 		if( member.getId() == null ) {
 			memberService.addNew(member);
 			redirectAttributes.addFlashAttribute("successMsg", "'" + member.getFirstName()+" "+member.getMiddleName() + "' is added as a new member.");
-			return "redirect:/add";
+			return "redirect:/member/add";
 		} else {
 			Member updatedMember = memberService.save( member );
 			redirectAttributes.addFlashAttribute("successMsg", "Changes for '" + member.getFirstName()+" "+member.getMiddleName() + "' are saved successfully. ");
