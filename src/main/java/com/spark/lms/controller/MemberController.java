@@ -50,7 +50,7 @@ public class MemberController {
 			model.addAttribute("member", member);
 			return "member/form";
 		} else {
-			return "redirect:member/add";
+			return "redirect:/member/add";
 		}
 	}
 	
@@ -67,7 +67,7 @@ public class MemberController {
 		} else {
 			Member updatedMember = memberService.save( member );
 			redirectAttributes.addFlashAttribute("successMsg", "Changes for '" + member.getFirstName()+" "+member.getMiddleName() + "' are saved successfully. ");
-			return "redirect:member/edit/" + updatedMember.getId();
+			return "redirect:/member/edit/" + updatedMember.getId();
 		}
 	}
 	
@@ -82,7 +82,7 @@ public class MemberController {
 				memberService.delete(id);
 			}
 		}
-		return "redirect:member/list";
+		return "redirect:/member/list";
 	}
 	
 	
